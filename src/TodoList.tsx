@@ -32,13 +32,11 @@ const TodoList = (props: TodoListPropsType) => {
         props.addTask(title)
         setTitle("")
     }
-    //
-    // const getOnClickHandler = ()=> {
-    //     props.changeTodoListFilter
-    // }
-    // const getNextClickHandler = ()=> {
-    //     props.changeTodoListFilter
-    // }
+
+    const getOnClickHandler = (filter: FilterValuesType)=> {
+        return ()=> props.changeTodoListFilter(filter)
+    }
+
 
     const onKeyDownAddTask = (e: KeyboardEvent<HTMLInputElement>) => {
         e.key === "Enter" && addTask()
@@ -62,9 +60,9 @@ const TodoList = (props: TodoListPropsType) => {
                 {tasksJSX}
             </ul>
             <div>
-                <button onClick={()=> props.changeTodoListFilter('all')}>All</button>
-                <button onClick={()=> props.changeTodoListFilter('active')}>Active</button>
-                <button onClick={()=> props.changeTodoListFilter('completed')}>Completed</button>
+                <button onClick={getOnClickHandler('all')}>All</button>
+                <button onClick={getOnClickHandler('active')}>Active</button>
+                <button onClick={getOnClickHandler('completed')}>Completed</button>
             </div>
         </div>
     );
