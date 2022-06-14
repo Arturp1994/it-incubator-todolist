@@ -37,6 +37,11 @@ function App() {
         setFilter(filter)
     }
 
+    const changeTaskStatus = (taskID:string, isDone:boolean)=> {
+        setTasks(tasks.map(t => t.id ===taskID ? {...t, isDone: isDone} : t))
+    }
+
+
     const [filter, setFilter] = useState<FilterValuesType>('all')
 
     let tasksForRender = tasks
@@ -56,6 +61,8 @@ function App() {
                 removeTask={removeTask}
                 changeTodoListFilter={changeTodoListFilter}
                 setLastState={setLastState}
+                changeTaskStatus={changeTaskStatus}
+                filter={filter}
             />
 
         </div>
