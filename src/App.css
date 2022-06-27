@@ -12,13 +12,13 @@
 }
 
 .error-message {
-  color: red
+  color: red;
 }
 
 .active-filter {
   background-color: aquamarine;
 }
 
-.is_Done {
+.is-done {
   opacity: 0.5;
 }
