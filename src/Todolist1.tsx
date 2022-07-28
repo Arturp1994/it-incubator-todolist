@@ -49,6 +49,7 @@ export function Todolist1({todolist}: PropsType) {
         tasks = tasks.filter(t => t.isDone === true);
     }
 
+
     return <div>
         <h3><EditableSpan value={title} onChange={changeTodolistTitle}/>
             <IconButton onClick={removeTodolist}>
