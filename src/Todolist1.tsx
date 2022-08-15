@@ -21,6 +21,7 @@ type PropsType = {
 }
 
 export function Todolist1({todolist}: PropsType) {
+
     const {title, id, filter} = todolist
     let tasks = useSelector<AppRootStateType, Array<TaskType>>(state => state.tasks[id])
 
